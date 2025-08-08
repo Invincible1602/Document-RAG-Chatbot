@@ -6,3 +6,4 @@ pydantic
 pinecone-client
 PyPDF2
 google-generativeai
+langchain-google-genai

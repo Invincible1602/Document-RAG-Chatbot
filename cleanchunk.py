@@ -4,7 +4,7 @@ import time
 import os
 
 # Configure your Gemini API key
-GEMINI_API_KEY = "AIzaSyDVajhOu5FSFiH0cXICpeRdi0l9-6w7vtk"  # Replace with your actual API key or set as environment variable
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")  # Replace with your actual API key or set as environment variable
 if not GEMINI_API_KEY:
     print("WARNING: GEMINI_API_KEY is not set. Please set it as an environment variable or in the script.")
     print("You can get an API key from https://ai.google.dev/gemini-api/docs/get-started/python")

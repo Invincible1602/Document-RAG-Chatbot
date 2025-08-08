@@ -23,8 +23,8 @@ except ImportError:
     Pinecone = None
 
 # Load API keys from environment first (safer).
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyDVajhOu5FSFiH0cXICpeRdi0l9-6w7vtk")
-PINECONE_API_KEY = os.getenv("PINECONE_API_KEY", "pcsk_7MxGB2_FZ1SiXcuug2jDG6AFAMpk8ErxBhHjc2zrovEAgDpuHxscPSwHPUnjjweSPNYQzA")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 PINECONE_ENVIRONMENT = os.getenv("PINECONE_ENVIRONMENT", "us-east-1")
 INDEX_NAME = "pdf-chatbot-index"
 EMBEDDING_MODEL = "models/embedding-001"

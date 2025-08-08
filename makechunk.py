@@ -1,8 +1,9 @@
 import math
 import google.generativeai as genai
+import os
 
 # Configure Gemini API
-GEMINI_API_KEY = "AIzaSyDVajhOu5FSFiH0cXICpeRdi0l9-6w7vtk"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
 
 def split_sentences_with_gemini(text: str) -> list[str]:

@@ -6,7 +6,7 @@ import requests
 import os
 from dotenv import load_dotenv
 load_dotenv()
-
+from fastapi.middleware.cors import CORSMiddleware
 import uploader
 import makechunk
 import cleanchunk
@@ -26,7 +26,13 @@ if not PINECONE_API_KEY:
 
 pc = Pinecone(api_key=PINECONE_API_KEY, environment=PINECONE_ENVIRONMENT)
 app = FastAPI()
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 class HackRxRequest(BaseModel):
     documents: str
     questions: List[str]
@@ -108,3 +114,12 @@ def hackrx_run(request: HackRxRequest, auth: None = Depends(verify_bearer_token)
 
     finally:
         os.remove(tmp_pdf_path)
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(
+        "run_workflow:app",
+        host="0.0.0.0",
+        port=8000,
+        reload=True
+    )

@@ -117,9 +117,4 @@ def hackrx_run(request: HackRxRequest, auth: None = Depends(verify_bearer_token)
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(
-        "run_workflow:app",
-        host="0.0.0.0",
-        port=8000,
-        reload=True
-    )
+    uvicorn.run("run_workflow:app", host="0.0.0.0", port=8000, reload=True)

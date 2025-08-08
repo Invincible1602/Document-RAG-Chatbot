@@ -1,5 +1,7 @@
+fastapi
+uvicorn
+python-dotenv
+requests
+pydantic
+pinecone-client
 PyPDF2
-reportlab
-nltk
-google-generativeai
-pinecone

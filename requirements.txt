@@ -1,0 +1,5 @@
+PyPDF2
+reportlab
+nltk
+google-generativeai
+pinecone
